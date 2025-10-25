@@ -17,6 +17,7 @@ const ResetPassword = () => {
   };
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <title>SkillCircle - Reset Password</title>
       <div data-aos="fade-right">
         <img src={ForgotPhoto} alt="" className="w-full" />
       </div>

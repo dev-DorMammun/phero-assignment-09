@@ -30,43 +30,42 @@ const Navbar = () => {
         >
           <img src={Logo} width={200} alt="" />
         </NavLink>
-        <div className="flex gap-4 items-center buttonContainer">
-          {!user ? (
-            <>
-              <NavLink
-                to="/login"
-                className="btn hover:bg-blue-400 hover:text-white bg-white text-blue-700"
-              >
-                Login
-              </NavLink>
-              <NavLink
-                to="/register"
-                className="btn hover:bg-blue-400 hover:text-white bg-white text-blue-700"
-              >
-                Register
-              </NavLink>
-            </>
-          ) : (
-            <>
-              <NavLink
-                to="/profile"
-                className="text-blue-700 h-[30px] w-[30px] cursor-pointer select-none"
-              >
-                <FaRegUserCircle
-                  className="w-full h-full select-none"
-                  title={`${user.displayName}`}
-                ></FaRegUserCircle>
-              </NavLink>
 
-              <button
-                onClick={handleSignOut}
-                className="btn hover:bg-blue-400 hover:text-white bg-white text-blue-700"
-              >
-                Log Out
-              </button>
-            </>
-          )}
-        </div>
+        {!user ? (
+          <div className="flex gap-4 items-center buttonContainer">
+            <NavLink
+              to="/login"
+              className="btn hover:bg-blue-400 hover:text-white bg-white text-blue-700"
+            >
+              Login
+            </NavLink>
+            <NavLink
+              to="/register"
+              className="btn hover:bg-blue-400 hover:text-white bg-white text-blue-700"
+            >
+              Register
+            </NavLink>
+          </div>
+        ) : (
+          <div className="flex gap-4 items-center">
+            <NavLink
+              to="/profile"
+              className="text-blue-700 h-[30px] w-[30px] cursor-pointer"
+            >
+              <FaRegUserCircle
+                className="w-full h-full"
+                title={`${user.displayName}`}
+              ></FaRegUserCircle>
+            </NavLink>
+
+            <button
+              onClick={handleSignOut}
+              className="btn hover:bg-blue-400 hover:text-white bg-white text-blue-700"
+            >
+              Log Out
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

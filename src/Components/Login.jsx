@@ -44,6 +44,7 @@ const Login = () => {
       .then((response) => {
         setUser(response.user);
         toast.success("Account Logged In Successfully");
+        console.log(response.user);
       })
       .catch((error) => {
         toast.error(error.message);
