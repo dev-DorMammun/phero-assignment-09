@@ -16,7 +16,7 @@ const App = () => {
 
   return (
     <>
-      <div className="relative flex flex-col gap-7 md:gap-20">
+      <div className="relative bg-base-300 flex flex-col gap-7 md:gap-20">
         <LoadingScreen state={loading} />
         <Navbar />
         <div data-aos="zoom-out" className="md:max-w-[1300px] md:mx-auto px-4">

@@ -16,6 +16,7 @@ export const router = createBrowserRouter([
       {
         index: true,
         Component: Home,
+        loader: () => fetch("data.json"),
       },
       {
         path: "login",
@@ -31,7 +32,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "profile",
-        Component: Profile,
+        element: (
+          <PrivateRoute>
+            <Profile></Profile>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/:id",

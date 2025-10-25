@@ -29,6 +29,7 @@ const Register = () => {
         });
         toast.success("Account Registered");
         event.target.reset();
+
         setTimeout(() => {
           navigate("/");
         }, 1000);

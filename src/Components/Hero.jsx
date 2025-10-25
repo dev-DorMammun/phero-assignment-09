@@ -21,7 +21,7 @@ const Hero = () => {
         <h1 className="text-4xl md:text-6xl font-bold bg-linear-to-r from-blue-700 to-blue-400 bg-clip-text text-transparent">
           Learn. Share. Grow.
         </h1>
-        <p className="text-gray-500">
+        <p className="text-gray-500 w-4/6 mx-auto">
           Discover new opportunities, connect with skilled individuals, and
           build a stronger local community through learning.
         </p>
@@ -43,7 +43,7 @@ const Hero = () => {
             disableOnInteraction: false,
             reverseDirection: false,
           }}
-          className="mySwiper w-4/7"
+          className="mySwiper w-3/7"
           style={{ transitionTimingFunction: "linear" }}
         >
           {skills.map((skill) => (
