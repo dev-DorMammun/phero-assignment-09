@@ -12,6 +12,7 @@ const ResetPassword = () => {
     sendPasswordResetEmail(auth, email)
       .then(() => {
         toast.success("E-mail sent. Please Check Your Mail");
+        event.target.reset();
       })
       .catch((error) => toast.error(error.message));
   };

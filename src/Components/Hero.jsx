@@ -51,7 +51,7 @@ const Hero = () => {
               key={skill.id}
               onClick={() => navigate(`/${skill.skillId}`)}
             >
-              <img src={skill.image} alt="" />
+              <img src={skill.image} alt="" className="rounded-xl" />
             </SwiperSlide>
           ))}
         </Swiper>

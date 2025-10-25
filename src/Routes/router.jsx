@@ -6,6 +6,7 @@ import Home from "../Components/Home";
 import ResetPassword from "../Components/ResetPassword";
 import Profile from "../Components/Profile";
 import DetailsPage from "../Components/DetailsPage";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -34,7 +35,12 @@ export const router = createBrowserRouter([
       },
       {
         path: "/:id",
-        Component: DetailsPage,
+        element: (
+          <PrivateRoute>
+            <DetailsPage></DetailsPage>
+          </PrivateRoute>
+        ),
+        loader: () => fetch("data.json"),
       },
     ],
   },
