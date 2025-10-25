@@ -7,7 +7,7 @@ const Home = () => {
   const data = useLoaderData();
 
   return (
-    <div className="flex flex-col gap-5 md:gap-20">
+    <div className="flex flex-col gap-10 md:gap-20">
       <title>SkillCircle - Home</title>
       <Hero />
       <div className="space-y-5">
