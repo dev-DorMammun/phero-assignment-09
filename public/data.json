@@ -1,0 +1,123 @@
+[
+  {
+    "skillId": 1,
+    "skillName": "Beginner Guitar Lessons",
+    "providerName": "Rahim Uddin",
+    "providerEmail": "rahim.guitar@skillcircle.com",
+    "price": 25,
+    "rating": 4.7,
+    "slotsAvailable": 4,
+    "description": "Learn the basics of playing the acoustic guitar in this comprehensive course designed for complete beginners. You will start from learning how to hold the guitar correctly, understand string names, tune the instrument, and play simple chords. Each session focuses on building confidence through hands-on practice and easy exercises. By the end of the course, you will be able to play simple melodies and songs. Whether you are learning for fun or to start your musical journey, this course provides an encouraging environment and personal attention. All lessons are conducted in a friendly and interactive manner to ensure a strong foundation in rhythm, coordination, and musical understanding.",
+    "image": "https://i.postimg.cc/NjT8kqMh/1.jpg",
+    "category": "Music"
+  },
+  {
+    "skillId": 2,
+    "skillName": "Basic Web Design",
+    "providerName": "Sadia Rahman",
+    "providerEmail": "sadia.web@skillcircle.com",
+    "price": 30,
+    "rating": 4.9,
+    "slotsAvailable": 5,
+    "description": "This web design course introduces you to HTML, CSS, and responsive design principles to help you create beautiful, functional websites. Sadia Rahman will guide you step-by-step, ensuring you understand the purpose of each element and how to style your pages effectively. The course covers layout design, color theory, typography, and basic SEO practices. Each participant will build their own small project by the end of the course. You will gain both theoretical knowledge and practical skills that can be applied to freelance work or personal projects. The class emphasizes creativity and hands-on learning through real-world examples and exercises.",
+    "image": "https://i.postimg.cc/nh7KGbzp/2.jpg",
+    "category": "Technology"
+  },
+  {
+    "skillId": 3,
+    "skillName": "Photography for Beginners",
+    "providerName": "Hasan Mahmud",
+    "providerEmail": "hasan.photo@skillcircle.com",
+    "price": 20,
+    "rating": 4.6,
+    "slotsAvailable": 6,
+    "description": "Discover the art of photography in this beginner-friendly course by Hasan Mahmud. Learn how to operate your camera, understand exposure, aperture, and shutter speed, and capture stunning photos in any lighting condition. The course focuses on composition techniques and how to tell stories through images. Each participant will work on practical assignments to strengthen their creative vision. By the end, you will be able to take clear, expressive photos with confidence. This course also touches on basic editing techniques and how to develop your own style. Perfect for hobbyists and aspiring photographers who wish to turn passion into skill.",
+    "image": "https://i.postimg.cc/fRX7fnLw/3.jpg",
+    "category": "Photography"
+  },
+  {
+    "skillId": 4,
+    "skillName": "Spoken English Practice",
+    "providerName": "Amina Khatun",
+    "providerEmail": "amina.english@skillcircle.com",
+    "price": 18,
+    "rating": 4.8,
+    "slotsAvailable": 8,
+    "description": "Enhance your English speaking skills with Amina Khatun\u2019s engaging sessions focused on practical communication. This course covers pronunciation, vocabulary building, sentence structure, and fluency improvement. You will participate in interactive speaking exercises, role plays, and everyday conversation practice. Each class creates a comfortable environment for learners to express themselves confidently. The aim is to help you speak English naturally in both professional and social situations. The instructor provides personalized feedback and guidance to help overcome hesitation and grammatical errors. Ideal for students, professionals, and anyone looking to improve spoken English effectively.",
+    "image": "https://i.postimg.cc/52v5Sd04/4.jpg",
+    "category": "Language"
+  },
+
+  {
+    "skillId": 5,
+    "skillName": "Cooking Bengali Dishes",
+    "providerName": "Nurjahan Begum",
+    "providerEmail": "nurjahan.cooking@skillcircle.com",
+    "price": 15,
+    "rating": 4.9,
+    "slotsAvailable": 10,
+    "description": "Learn to cook authentic Bengali dishes with Nurjahan Begum\u2019s hands-on cooking sessions. You\u2019ll discover how to prepare traditional meals like biryani, hilsa curry, dal, and pitha using local ingredients. Each session covers preparation, seasoning, and cooking techniques that enhance flavor and texture. The class is designed for both beginners and food enthusiasts. You\u2019ll also learn how to plate and present dishes beautifully. By the end, you\u2019ll be able to cook and serve delicious Bengali meals confidently. The course emphasizes home-style cooking with a touch of modern presentation, making every dish flavorful and memorable.",
+    "image": "https://i.postimg.cc/1zQGWCnZ/6.jpg",
+    "category": "Cooking"
+  },
+  {
+    "skillId": 6,
+    "skillName": "Digital Marketing Basics",
+    "providerName": "Farhana Akter",
+    "providerEmail": "farhana.marketing@skillcircle.com",
+    "price": 28,
+    "rating": 4.7,
+    "slotsAvailable": 7,
+    "description": "Join Farhana Akter\u2019s Digital Marketing Basics course to understand how online marketing works in today\u2019s digital world. You\u2019ll learn SEO, social media marketing, and content creation techniques. The course helps you build brand awareness and engagement through practical exercises and case studies. Each module is carefully structured to help you understand analytics and target the right audience. The class offers guidance on using tools like Google Ads, Facebook Ads, and Canva for campaigns. Perfect for beginners who want to explore marketing as a career or grow their own business using online platforms.",
+    "image": "https://i.postimg.cc/pL8QJbTX/5.jpg",
+    "category": "Marketing"
+  },
+  {
+    "skillId": 7,
+    "skillName": "Graphic Design Essentials",
+    "providerName": "Imran Hossain",
+    "providerEmail": "imran.design@skillcircle.com",
+    "price": 35,
+    "rating": 4.8,
+    "slotsAvailable": 5,
+    "description": "Imran Hossain\u2019s Graphic Design Essentials course teaches you how to create professional visual designs using tools like Adobe Photoshop and Illustrator. You will learn layout design, color theory, typography, and branding fundamentals. Each session includes practical exercises and project-based learning to help you build a design portfolio. This course is suitable for anyone who wants to become a designer or improve their creativity. The instructor provides detailed feedback and real-world examples to help you understand the principles of good design. By the end, you\u2019ll be ready to create stunning graphics for digital and print media.",
+    "image": "https://i.postimg.cc/k5mQj16C/7.jpg",
+    "category": "Design"
+  },
+  {
+    "skillId": 8,
+    "skillName": "Mobile App Development",
+    "providerName": "Kamal Ahmed",
+    "providerEmail": "kamal.app@skillcircle.com",
+    "price": 40,
+    "rating": 4.9,
+    "slotsAvailable": 4,
+    "description": "This course introduces mobile app development using Flutter and Dart. Kamal Ahmed provides clear, beginner-friendly guidance for building cross-platform apps. You\u2019ll learn about app architecture, UI design, and state management while creating a simple but functional project. Each class is practical, ensuring you understand how apps are structured and deployed. The sessions are interactive, focusing on solving real-world problems. By the end of this course, you\u2019ll have built your first app and gained a solid understanding of mobile development basics. Ideal for anyone who wants to enter the app development field with confidence.",
+    "image": "https://i.postimg.cc/MGS7sPMx/8.jpg",
+    "category": "Technology"
+  },
+  {
+    "skillId": 9,
+    "skillName": "Handicraft Making",
+    "providerName": "Rokeya Sultana",
+    "providerEmail": "rokeya.craft@skillcircle.com",
+    "price": 12,
+    "rating": 4.5,
+    "slotsAvailable": 9,
+    "description": "Explore your creativity with Rokeya Sultana\u2019s Handicraft Making course. You\u2019ll learn to make traditional crafts using paper, fabric, and clay. Each class includes step-by-step instructions for creating home decor and gift items. The course helps you develop patience, focus, and artistic expression. Participants can also sell their handmade crafts online or at local markets. This hands-on learning experience is suitable for all ages and skill levels. Rokeya\u2019s friendly teaching style ensures a supportive environment where creativity flourishes. Join and experience the joy of crafting unique items with your own hands.",
+    "image": "https://i.postimg.cc/s2rYn6Qj/9.jpg",
+    "category": "Art"
+  },
+  {
+    "skillId": 10,
+    "skillName": "Basic Tailoring",
+    "providerName": "Salma Bibi",
+    "providerEmail": "salma.tailor@skillcircle.com",
+    "price": 14,
+    "rating": 4.6,
+    "slotsAvailable": 6,
+    "description": "Salma Bibi\u2019s Basic Tailoring course is designed for beginners who wish to learn sewing and clothing repair. The course covers how to use a sewing machine, take measurements, and create basic dress patterns. Each lesson focuses on practical sewing skills that can be used for personal or professional purposes. Participants will learn different types of stitches, fabric handling, and finishing techniques. The course is ideal for homemakers or anyone interested in starting a small tailoring business. Salma provides step-by-step demonstrations to ensure everyone learns comfortably at their own pace.",
+    "image": "https://i.postimg.cc/JhLNT6Dh/10.jpg",
+    "category": "Craft"
+  }
+]

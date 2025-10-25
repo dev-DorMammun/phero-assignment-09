@@ -57,7 +57,7 @@ const Login = () => {
     <div className="grid grid-cols-1 gap-5 md:grid-cols-2 ">
       <title>SkillCircle - Login</title>
       <div data-aos="fade-right">
-        <img src={LoginPhoto} alt="" className="w-full" />
+        <img loading="eager" src={LoginPhoto} alt="" className="w-full" />
       </div>
       <div
         data-aos="fade-left"

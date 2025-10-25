@@ -43,7 +43,7 @@ const Register = () => {
   return (
     <div className="grid grid-cols-1 gap-5 md:grid-cols-2 ">
       <div data-aos="fade-right" className="">
-        <img src={RegisterPhoto} alt="" className="w-full" />
+        <img loading="eager" src={RegisterPhoto} alt="" className="w-full" />
       </div>
       <div
         data-aos="fade-left"

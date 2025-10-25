@@ -1,12 +1,13 @@
 import React, { use, useState } from "react";
 import Logo from "../assets/logo.png";
-import { NavLink } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 import { AuthContext } from "../Contexts/AuthContext";
 import { toast } from "react-toastify";
 import { FaRegUserCircle } from "react-icons/fa";
 
 const Navbar = () => {
-  const { user, setUser, logOut, setLoading, navigate } = use(AuthContext);
+  const { user, setUser, logOut, setLoading } = use(AuthContext);
+  const navigate = useNavigate();
 
   const handleSignOut = async () => {
     setLoading(true);
@@ -15,6 +16,7 @@ const Navbar = () => {
       .then(() => {
         setUser(null);
         toast.success("Signed Out Successfully");
+        navigate("/");
       })
       .catch((error) => toast.error(error.message));
 
@@ -22,13 +24,16 @@ const Navbar = () => {
   };
 
   return (
-    <div data-aos="fade-down" className="sticky top-0 backdrop-blur-md z-10">
+    <div
+      data-aos="fade-down"
+      className="sticky border border-gray-300 top-0 backdrop-blur-md z-10"
+    >
       <div className="flex flex-col md:flex-row gap-3 md:justify-between items-center py-5 navbar max-w-[1300px] mx-auto">
         <NavLink
           to="/"
           className="btn shadow-none hover:bg-transparent hover:border-none hover:shadow-none bg-transparent border-none"
         >
-          <img src={Logo} width={200} alt="" />
+          <img src={Logo} loading="eager" width={200} alt="" />
         </NavLink>
 
         {!user ? (

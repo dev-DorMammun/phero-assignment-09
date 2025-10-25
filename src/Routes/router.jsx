@@ -5,6 +5,7 @@ import Register from "../Components/Register";
 import Home from "../Components/Home";
 import ResetPassword from "../Components/ResetPassword";
 import Profile from "../Components/Profile";
+import DetailsPage from "../Components/DetailsPage";
 
 export const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ export const router = createBrowserRouter([
       {
         path: "profile",
         Component: Profile,
+      },
+      {
+        path: "/:id",
+        Component: DetailsPage,
       },
     ],
   },

@@ -11,8 +11,13 @@ const Profile = () => {
   const handleUpdateProfile = async (event) => {
     event.preventDefault();
 
-    const displayName = event.target.name.value;
-    const photoURL = event.target.photo.value;
+    const displayName = event.target.name.value
+      ? event.target.name.value
+      : user.displayName;
+    const photoURL = event.target.photo.value
+      ? event.target.photo.value
+      : user.photoURL;
+
     if (displayName || photoURL) {
       setLoading(true);
 
@@ -31,10 +36,16 @@ const Profile = () => {
   return (
     <div className="flex flex-col gap-20 md:grid items-center md:grid-cols-2">
       <div data-aos="fade-right">
-        <img src={ProfilePhoto} alt="" className="w-full" />
+        <img src={ProfilePhoto} alt="" loading="eager" className="w-full" />
       </div>
       <div data-aos="fade-left" className="space-y-3">
-        <img src={user.photoURL} alt="" className="rounded-full" width={150} />
+        <img
+          src={user.photoURL}
+          loading="eager"
+          alt=""
+          className="rounded-full"
+          width={150}
+        />
         <div>
           <h1 className="text-2xl font-bold">{user.displayName}</h1>
           <p className="text-gray-500">{user.email}</p>

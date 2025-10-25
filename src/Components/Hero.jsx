@@ -1,7 +1,17 @@
-import React from "react";
+import React, { use } from "react";
 import HeroPhoto from "../assets/hero.svg";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/free-mode";
+import { Autoplay, FreeMode } from "swiper/modules";
+import { useNavigate } from "react-router";
+
+const data = fetch("data.json").then((response) => response.json());
 
 const Hero = () => {
+  const skills = use(data);
+  const navigate = useNavigate();
+
   return (
     <div
       data-aos="zoom-out"
@@ -19,8 +29,32 @@ const Hero = () => {
           Discover More
         </button>
       </div>
-      <div>
-        <img src={HeroPhoto} alt="" />
+
+      <div className="flex justify-end">
+        <Swiper
+          modules={[Autoplay]}
+          grabCursor={true}
+          loop={true}
+          slidesPerView={"auto"}
+          spaceBetween={20}
+          speed={3000} //
+          autoplay={{
+            delay: 0,
+            disableOnInteraction: false,
+            reverseDirection: false,
+          }}
+          className="mySwiper w-4/7"
+          style={{ transitionTimingFunction: "linear" }}
+        >
+          {skills.map((skill) => (
+            <SwiperSlide
+              key={skill.id}
+              onClick={() => navigate(`/${skill.skillId}`)}
+            >
+              <img src={skill.image} alt="" />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </div>
   );
