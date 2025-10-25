@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: light --default;
+}
+
+.buttonContainer a.active {
+  background-color: var(--color-blue-700);
+  color: white;
+}
