@@ -1,7 +1,7 @@
 const LoadingScreen = ({ state }) => {
   return (
     <div
-      className={`h-screen w-screen absolute top-0 z-20 backdrop-blur-md flex flex-col gap-3 justify-center items-center ${
+      className={`h-full select-none w-screen absolute top-0 z-20 backdrop-blur-md flex flex-col gap-3 justify-center items-center ${
         state ? "block" : "hidden"
       }`}
     >

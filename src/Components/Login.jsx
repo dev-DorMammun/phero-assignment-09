@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Navigate, NavLink } from "react-router";
+import { Navigate, NavLink, useNavigate } from "react-router";
 import { AuthContext } from "../Contexts/AuthContext";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { toast } from "react-toastify";
@@ -8,6 +8,7 @@ import LoginPhoto from "../assets/login.svg";
 import LoadingScreen from "./LoadingScreen";
 
 const Login = () => {
+  const navigate = useNavigate();
   const {
     user,
     setUser,
@@ -44,7 +45,7 @@ const Login = () => {
       .then((response) => {
         setUser(response.user);
         toast.success("Account Logged In Successfully");
-        console.log(response.user);
+        navigate("/");
       })
       .catch((error) => {
         toast.error(error.message);
