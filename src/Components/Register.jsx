@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Navigate, NavLink } from "react-router";
+import { Navigate, NavLink, useNavigate } from "react-router";
 import { AuthContext } from "../Contexts/AuthContext";
 import { IoEyeOffSharp, IoEyeSharp } from "react-icons/io5";
 import { toast } from "react-toastify";
@@ -7,18 +7,20 @@ import { updateProfile } from "firebase/auth";
 import RegisterPhoto from "../assets/register.svg";
 
 const Register = () => {
-  const { setUser, registerEmailPass } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const { setUser, registerEmailPass, setLoading } = useContext(AuthContext);
   const [show, setShow] = useState(false);
 
-  const handleRegister = (event) => {
+  const handleRegister = async (event) => {
     event.preventDefault();
+    setLoading(true);
 
     const displayName = event.target.name.value;
     const photoURL = event.target.photo.value;
     const email = event.target.email.value;
     const password = event.target.password.value;
 
-    registerEmailPass(email, password)
+    await registerEmailPass(email, password)
       .then((response) => {
         setUser({ ...response.user, displayName, photoURL });
         updateProfile(response.user, {
@@ -27,18 +29,28 @@ const Register = () => {
         });
         toast.success("Account Registered");
         event.target.reset();
+        setTimeout(() => {
+          navigate("/");
+        }, 1000);
       })
-      .catch((error) => toast.error(error.message));
+      .catch((error) => {
+        toast.error(error.message);
+      });
+
+    setLoading(false);
   };
 
   return (
     <div className="grid grid-cols-1 gap-5 md:grid-cols-2 ">
-      <div className="hidden md:block">
+      <div data-aos="fade-right" className="">
         <img src={RegisterPhoto} alt="" className="w-full" />
       </div>
-      <div className="flex flex-col gap-4 justify-center items-center">
+      <div
+        data-aos="fade-left"
+        className="flex flex-col gap-4 justify-center items-center"
+      >
         <title>SkillCircle - Register</title>
-        <h1 className="text-2xl font-bold">Register</h1>
+        <h1 className="text-2xl font-bold">Create An Account</h1>
 
         <form onSubmit={handleRegister}>
           <fieldset className="fieldset border border-gray-300 shadow-md p-5 rounded-xl">

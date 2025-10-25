@@ -1,7 +1,7 @@
 import { sendPasswordResetEmail } from "firebase/auth";
-import React from "react";
 import { auth } from "../Firebase/firebase.config";
 import { toast } from "react-toastify";
+import ForgotPhoto from "../assets/forgot.svg";
 
 const ResetPassword = () => {
   const handleResetEmail = (event) => {
@@ -16,24 +16,32 @@ const ResetPassword = () => {
       .catch((error) => toast.error(error.message));
   };
   return (
-    <div className="flex flex-col justify-center items-center gap-4">
-      <h1 className="text-2xl font-bold">Reset Password</h1>
-      <form
-        onSubmit={handleResetEmail}
-        className="p-5 border border-gray-400 rounded-xl shadow-md flex flex-col space-y-3"
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <div data-aos="fade-right">
+        <img src={ForgotPhoto} alt="" className="w-full" />
+      </div>
+      <div
+        data-aos="fade-left"
+        className="flex flex-col justify-center items-center gap-4"
       >
-        <label className="label">Email</label>
-        <input
-          type="email"
-          className="input"
-          placeholder="Email"
-          name="email"
-          required
-        />
-        <button className="btn bg-blue-700 text-white rounded-md border-none my-3">
-          Send E-mail
-        </button>
-      </form>
+        <h1 className="text-2xl font-bold">Reset Password</h1>
+        <form
+          onSubmit={handleResetEmail}
+          className="p-5 border border-gray-400 rounded-xl shadow-md flex flex-col space-y-3"
+        >
+          <label className="label">Email</label>
+          <input
+            type="email"
+            className="input"
+            placeholder="Email"
+            name="email"
+            required
+          />
+          <button className="btn bg-blue-700 text-white rounded-md border-none my-3">
+            Send E-mail
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

@@ -1,15 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
 import Navbar from "./Components/Navbar";
 import { Outlet } from "react-router";
 import Footer from "./Components/Footer";
 import { ToastContainer } from "react-toastify";
+import LoadingScreen from "./Components/LoadingScreen";
+import { AuthContext } from "./Contexts/AuthContext";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import "animate.css";
+
+AOS.init();
 
 const App = () => {
+  const { loading, setLoading } = useContext(AuthContext);
+
   return (
     <>
-      <div className="relative flex flex-col gap-20">
+      <div className="relative flex flex-col gap-7 md:gap-20">
+        <LoadingScreen state={loading} />
         <Navbar />
-        <div className="max-w-[1300px] mx-auto">
+        <div data-aos="zoom-out" className="md:max-w-[1300px] md:mx-auto px-4">
           <Outlet />
         </div>
         <Footer />

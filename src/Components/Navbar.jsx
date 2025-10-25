@@ -6,20 +6,24 @@ import { toast } from "react-toastify";
 import { FaRegUserCircle } from "react-icons/fa";
 
 const Navbar = () => {
-  const { user, setUser, logOut } = use(AuthContext);
+  const { user, setUser, logOut, setLoading, navigate } = use(AuthContext);
 
-  const handleSignOut = () => {
-    logOut()
+  const handleSignOut = async () => {
+    setLoading(true);
+
+    await logOut()
       .then(() => {
         setUser(null);
         toast.success("Signed Out Successfully");
       })
       .catch((error) => toast.error(error.message));
+
+    setLoading(false);
   };
 
   return (
-    <div className=" sticky top-0 backdrop-blur-md z-10">
-      <div className="flex justify-between items-center py-5 navbar max-w-[1300px] mx-auto">
+    <div data-aos="fade-down" className="sticky top-0 backdrop-blur-md z-10">
+      <div className="flex flex-col md:flex-row gap-3 md:justify-between items-center py-5 navbar max-w-[1300px] mx-auto">
         <NavLink
           to="/"
           className="btn shadow-none hover:bg-transparent hover:border-none hover:shadow-none bg-transparent border-none"
@@ -31,28 +35,32 @@ const Navbar = () => {
             <>
               <NavLink
                 to="/login"
-                className="btn hover:bg-blue-400 hover:text-white bg-transparent text-blue-700"
+                className="btn hover:bg-blue-400 hover:text-white bg-white text-blue-700"
               >
                 Login
               </NavLink>
               <NavLink
                 to="/register"
-                className="btn hover:bg-blue-400 hover:text-white bg-transparent text-blue-700"
+                className="btn hover:bg-blue-400 hover:text-white bg-white text-blue-700"
               >
                 Register
               </NavLink>
             </>
           ) : (
             <>
-              <div className="text-blue-700 h-[30px] w-[30px] cursor-pointera">
+              <NavLink
+                to="/profile"
+                className="text-blue-700 h-[30px] w-[30px] cursor-pointer select-none"
+              >
                 <FaRegUserCircle
-                  className="w-full h-full"
+                  className="w-full h-full select-none"
                   title={`${user.displayName}`}
                 ></FaRegUserCircle>
-              </div>
+              </NavLink>
+
               <button
                 onClick={handleSignOut}
-                className="btn hover:bg-blue-400 hover:text-white bg-transparent text-blue-700"
+                className="btn hover:bg-blue-400 hover:text-white bg-white text-blue-700"
               >
                 Log Out
               </button>

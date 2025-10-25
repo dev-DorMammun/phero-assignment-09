@@ -5,46 +5,64 @@ import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { toast } from "react-toastify";
 import { IoEyeOffSharp, IoEyeSharp } from "react-icons/io5";
 import LoginPhoto from "../assets/login.svg";
+import LoadingScreen from "./LoadingScreen";
 
 const Login = () => {
-  const { user, setUser, loginEmailPass, signInWithGoogle } =
-    useContext(AuthContext);
+  const {
+    user,
+    setUser,
+    loginEmailPass,
+    signInWithGoogle,
+    loading,
+    setLoading,
+  } = useContext(AuthContext);
   const [show, setShow] = useState(false);
 
-  const handleSignInEmailPass = (event) => {
+  const handleSignInEmailPass = async (event) => {
     event.preventDefault();
+    setLoading(true);
 
     const email = event.target.email.value;
     const password = event.target.password.value;
 
-    loginEmailPass(email, password)
+    await loginEmailPass(email, password)
       .then((response) => {
         setUser(response.user);
         toast.success("Account Logged In Successfully");
         event.target.reset();
       })
       .catch((error) => toast.error(error.message));
+
+    setLoading(false);
   };
 
-  const handleSignInWithGoogle = (event) => {
+  const handleSignInWithGoogle = async (event) => {
     event.preventDefault();
+    setLoading(true);
 
-    signInWithGoogle()
+    await signInWithGoogle()
       .then((response) => {
         setUser(response.user);
         toast.success("Account Logged In Successfully");
       })
-      .catch((error) => toast.error(error.message));
+      .catch((error) => {
+        toast.error(error.message);
+      });
+
+    setLoading(false);
   };
 
   return (
     <div className="grid grid-cols-1 gap-5 md:grid-cols-2 ">
       <title>SkillCircle - Login</title>
-      <div>
+      <div data-aos="fade-right">
         <img src={LoginPhoto} alt="" className="w-full" />
       </div>
-      <div className="flex flex-col gap-4 justify-center items-center">
-        <h1 className="text-2xl font-bold">Login</h1>
+      <div
+        data-aos="fade-left"
+        className="flex flex-col gap-4 justify-center items-center"
+      >
+        <h1 className="text-2xl font-bold">Sign In To Your Account</h1>
 
         <form onSubmit={handleSignInEmailPass}>
           <fieldset className="fieldset border border-gray-300 shadow-md p-5 rounded-xl">

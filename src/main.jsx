@@ -10,11 +10,7 @@ const root = document.getElementById("root");
 
 ReactDOM.createRoot(root).render(
   <AuthProvider>
-    <Suspense
-      fallback={
-        <div className="loading loading-dots loading-xl h-screen"></div>
-      }
-    >
+    <Suspense>
       <RouterProvider router={router} />
     </Suspense>
   </AuthProvider>

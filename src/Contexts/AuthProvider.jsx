@@ -8,11 +8,13 @@ import {
   GoogleAuthProvider,
   signOut,
 } from "firebase/auth";
+import { useNavigate } from "react-router";
 
 const googleProvider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const signInWithGoogle = () => {
     return signInWithPopup(auth, googleProvider);
@@ -34,12 +36,10 @@ const AuthProvider = ({ children }) => {
     localStorage.setItem("user", JSON.stringify(user));
   }, [user]);
 
-  useEffect(() => {
-    setUser(JSON.parse(localStorage.getItem("user")));
-  }, []);
-
   const authInfo = {
     user,
+    loading,
+    setLoading,
     setUser,
     signInWithGoogle,
     registerEmailPass,
